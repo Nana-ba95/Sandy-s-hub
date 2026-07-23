@@ -14,13 +14,23 @@ class ErrorCatcher extends React.Component {
     if (this.state.error) {
       return (
         <pre style={{ padding: 20, color: "red", whiteSpace: "pre-wrap", fontFamily: "monospace" }}>
-          {String(this.state.error.stack || this.state.error)}
+          {"NAME: " + this.state.error.name + "\n"}
+          {"MESSAGE: " + this.state.error.message + "\n\n"}
+          {"STACK:\n" + String(this.state.error.stack || "")}
         </pre>
       );
     }
     return this.props.children;
   }
 }
+
+// Also catch errors that happen outside React's render (e.g. during module load)
+window.addEventListener("error", (e) => {
+  document.getElementById("root").innerHTML =
+    "<pre style='padding:20px;color:red;white-space:pre-wrap;font-family:monospace'>WINDOW ERROR: " +
+    (e.message || "") + "\n" + (e.error && e.error.stack ? e.error.stack : "") +
+    "</pre>";
+});
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
