@@ -1,0 +1,18 @@
+{
+  "name": "Sandy's Hub",
+  "short_name": "Sandy's Hub",
+  "description": "Shipping, logistics, gadgets, clothes & electronics — shop, fulfill, and manage in one place.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#1F2E45",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icons/logo-crop.png",
+      "sizes": "530x480",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
