@@ -147,7 +147,7 @@ function Ledger({ title, right, children }) {
 
 // Replace with your real Paystack public key from your Paystack dashboard.
 // This one is a placeholder and will not process real payments.
-const PAYSTACK_PUBLIC_KEY = "pk_test_replace_with_your_real_public_key";
+const PAYSTACK_PUBLIC_KEY = "pk_test_f87abe4830a39b5d01ef53de326acc988fb3b0cf";
 
 function CustomerView({ products, cart, setCart, setOrders, setProducts }) {
   const [customerName, setCustomerName] = useState("");
