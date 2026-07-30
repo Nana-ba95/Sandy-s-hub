@@ -561,7 +561,12 @@ function EmployeeView({ orders, products, refreshOrders, refreshProducts }) {
                 {uploadError && <p className="text-xs text-[#B8873F]">{uploadError}</p>}
               </div>
               <input
-                placeholder="Short description"
+                placeholder="Short description"<input
+  placeholder="Or paste a photo URL instead"
+  value={draft.image}
+  onChange={(e) => setDraft({ ...draft, image: e.target.value })}
+  className="rounded border border-[#1F2E45]/20 bg-transparent px-2 py-1 text-sm"
+/>
                 value={draft.description}
                 onChange={(e) => setDraft({ ...draft, description: e.target.value })}
                 className="rounded border border-[#1F2E45]/20 bg-transparent px-2 py-1 text-sm"
