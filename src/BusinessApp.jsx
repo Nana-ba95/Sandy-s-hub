@@ -384,7 +384,7 @@ function EmployeeView({ orders, products, refreshOrders, refreshProducts }) {
     const fileName = `${Date.now()}-${file.name}`;
     const { error } = await supabase.storage.from("product-images").upload(fileName, file);
     if (error) {
-      setUploadError("Upload failed: " + error.message);
+      setUploadErrorsetUploadError(`Upload failed: ${error.message} | file: ${file.name}, size: ${file.size} bytes, type: ${file.type}`);
       setUploading(false);
       return;
     }
