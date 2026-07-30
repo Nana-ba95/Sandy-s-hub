@@ -373,8 +373,12 @@ function EmployeeView({ orders, products, refreshOrders, refreshProducts }) {
   const pendingCount = orders.filter((o) => o.status === "Pending").length;
 
   const handlePhotoUpload = async (e) => {
-    const file = e.target.files[0];
-    if (!file) return;
+    const file = e.target.files[0];if (!file) {
+      setUploadError("No file detected by browser.");
+      return;
+    }
+    setUploadError(`File detected: ${file.name}, size: ${file.size} bytes, type: ${file.type}`);
+    
     setUploading(true);
     setUploadError("");
     const fileName = `${Date.now()}-${file.name}`;
