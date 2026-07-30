@@ -170,7 +170,7 @@ function CustomerView({ products, cart, setCart, refreshProducts, refreshOrders 
             >
               <div>
                 {p.image ? (
-                  <img src={p.image} alt={p.name} className="mb-3 h-80 w-full rounded-md object-cover" />
+                  <img src={p.image} alt={p.name} className="mb-3 h-96 w-full rounded-md object-cover" />
                 ) : (
                   <div className="mb-3 flex h-32 w-full items-center justify-center rounded-md bg-[#1F2E45]/5 text-xs text-[#1F2E45]/30">
                     No photo yet
