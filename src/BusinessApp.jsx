@@ -378,13 +378,13 @@ function EmployeeView({ orders, products, refreshOrders, refreshProducts }) {
     setUploading(true);
     setUploadError("");
     const fileName = `${Date.now()}-${file.name}`;
-    const { error } = await supabase.storage.from("product -image").upload(fileName, file);
+    const { error } = await supabase.storage.from("product-image").upload(fileName, file);
     if (error) {
       setUploadError("Upload failed: " + error.message);
       setUploading(false);
       return;
     }
-    const { data } = supabase.storage.from("product -image").getPublicUrl(fileName);
+    const { data } = supabase.storage.from("product-image").getPublicUrl(fileName);
     setDraft((d) => ({ ...d, image: data.publicUrl }));
     setUploading(false);
   };
